@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Bootstrap and JavaScript Example</title>
-  <!-- Load Bootstrap CSS -->
+  <title>My Webpage</title>
+  <!-- Include Bootstrap CSS file -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Include jQuery JavaScript file -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <!-- Include Bootstrap JavaScript file -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+
 </head>
+
 <body>
   <!-- Navigation Bar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Bootstrap and JavaScript Example</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
@@ -32,19 +41,42 @@
     <h1>Bootstrap and JavaScript Example</h1>
     <p>This is a simple example of using Bootstrap and JavaScript together.</p>
     <button id="btn-change-color" class="btn btn-primary">Change Color</button>
+    <button id="btn-hide-text" class="btn btn-secondary">Hide Text</button>
+    <button id="btn-show-text" class="btn btn-success">Show Text</button>
+    <input type="text" id="text-input" placeholder="Type something here...">
   </div>
 
-  <!-- Load JavaScript and jQuery -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"></script>
-
-  <!-- JavaScript code to change the background color -->
+  <!-- JavaScript code to handle button clicks and animations -->
   <script>
-    $(document).ready(function() {
-      $("#btn-change-color").click(function() {
+    $(document).ready(function () {
+      // Fade-in animation for the jumbotron
+      $(".jumbotron").hide().fadeIn(1000);
+
+      // Initialize the button
+      $("#btn-change-color").click(function () {
         $(".jumbotron").css("background-color", "lightblue");
+      });
+
+      // Hide the text when "Hide Text" button is clicked
+      $("#btn-hide-text").click(function () {
+        $("p").hide();
+      });
+
+      // Show the text when "Show Text" button is clicked
+      $("#btn-show-text").click(function () {
+        $("p").show();
+      });
+
+      // Set the input text as the heading when "Change Heading" button is clicked
+      $("#text-input").keypress(function (event) {
+        if (event.which == 13) {
+          var inputText = $(this).val();
+          $("h1").text(inputText);
+          $(this).val("");
+        }
       });
     });
   </script>
 </body>
+
 </html>

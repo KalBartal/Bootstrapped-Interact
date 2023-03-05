@@ -44,6 +44,10 @@
     <button id="btn-hide-text" class="btn btn-secondary">Hide Text</button>
     <button id="btn-show-text" class="btn btn-success">Show Text</button>
     <input type="text" id="text-input" placeholder="Type something here...">
+    <br>
+    <button id="btn-increase-font-size" class="btn btn-info">Increase Font Size</button>
+    <button id="btn-decrease-font-size" class="btn btn-danger">Decrease Font Size</button>
+    <button id="btn-reset-font-size" class="btn btn-warning">Reset Font Size</button>
   </div>
 
   <!-- JavaScript code to handle button clicks and animations -->
@@ -75,6 +79,24 @@
           $(this).val("");
         }
       });
+
+      // Increase font size when "Increase Font Size" button is clicked
+      $("#btn-increase-font-size").click(function () {
+        var currentFontSize = parseInt($("p").css("font-size"));
+        $("p").css("font-size", currentFontSize + 1);
+      });
+
+      // Decrease font size when "Decrease Font Size" button is clicked
+      $("#btn-decrease-font-size").click(function () {
+        var currentFontSize = parseInt($("p").css("font-size"));
+        $("p").css("font-size", currentFontSize - 1);
+      });
+
+      // Reset font size when "Reset Font Size" button is clicked
+      $("#btn-reset-font-size").click(function () {
+        $("p").css("font-size", "16px");
+      });
+
     });
   </script>
 </body>

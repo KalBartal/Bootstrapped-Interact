@@ -1,4 +1,4 @@
-### Bootstrapped Interact
+## Bootstrapped Interact
 
 Bootstrapped Interact is a simple webpage that demonstrates how to use Bootstrap CSS framework and JavaScript programming language to add interactivity. It includes a navigation bar at the top, a jumbotron in the middle, and buttons that change the background color of the jumbotron, hide and show text, increase and decrease font size and reset the font size to default.
 
